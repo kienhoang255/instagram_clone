@@ -1,0 +1,15 @@
+.backgroundFollowBtn {
+  background-color: #fafafa !important;
+  color: black !important;
+  border: 1px #dbdbdb;
+}
+
+.disable {
+  visibility: hidden !important;
+  display: none !important;
+}
+
+#disable {
+  visibility: hidden !important;
+  display: none !important;
+}
