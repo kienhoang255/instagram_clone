@@ -6,7 +6,7 @@ import Post from "./Post";
 import { users } from "../../utils/db";
 
 export default function PersonPage() {
-  const [idFind, getIdFind] = useState("1");
+  const [idFind, getIdFind] = useState("2");
   // const itemUser = users.find((user) => user.idUser == "1");
   // console.log(itemUser);
   return (
