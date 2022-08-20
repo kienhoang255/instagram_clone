@@ -5,7 +5,7 @@ import { stories } from "../../utils/db";
 
 export default function StoryList({ id }) {
   const _id = id;
-  const filterId = stories.filter((story) => story.idUser == _id);
+  const filterId = stories.filter((story) => story.idUser === _id);
   // console.log(filterId);
   return (
     <Wrap p="2em" pl="2em" minHeight="10em">
@@ -13,8 +13,6 @@ export default function StoryList({ id }) {
         {filterId.map((element, index) => (
           <StoryItem key={index} item={element} />
         ))}
-
-        {/* <StoryItem /> */}
       </Grid>
     </Wrap>
   );

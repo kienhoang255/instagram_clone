@@ -1,9 +1,7 @@
 import { Box, GridItem, Image } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 
 export default function PostItem({ item, index }) {
-  const [isHover, getIsHover] = useState(true);
-  const handleHover = (e) => {};
   return (
     <GridItem width="100%" height={{ lg: 293 }}>
       <Box cursor="pointer">

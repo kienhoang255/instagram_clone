@@ -18,7 +18,7 @@ import { LogoIns } from "../logo";
 function Header() {
   return (
     <div className="nav-header">
-      <Stack alignItems='center'>
+      <Stack alignItems='center' bg="#ffffff" borderBottom="1px" borderColor="#c1c1c1">
         <HStack
           justifyContent="space-around"
           p="2"
@@ -30,7 +30,7 @@ function Header() {
             <InputGroup variant="filled" w="280px" color="rgb(142,142,142)">
               <InputLeftElement
                 pointerEvents="none"
-                children={<SearchIcon  />}
+                children={<SearchIcon />}
               />
               <Input type="tel" placeholder="Search" />
             </InputGroup>

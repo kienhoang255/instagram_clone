@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Main from "./components/Main";
-import { Container } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import Header from "./components/Header";
 import Post from "./components/Post";
+import Message from "./components/Message/Message";
 import {
   BrowserRouter as Router,
   BrowserRouter,
@@ -13,19 +14,19 @@ import {
 function App() {
   return (
     <div className="App">
-      <Container maxWidth="60em">
+      <Box bg="#fafafa" w="100%" h="100%">
         <Header />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Main />} />
+        <Container maxWidth="62em">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Main />} ></Route>
+              <Route path="/post" element={<Post />}></Route>
+              <Route path="/message" element={<Message />}></Route>
+            </Routes>
+          </BrowserRouter>
 
-            {/* </Route>
-          <Route path="/post">
-          <Post/>
-          </Route> */}
-          </Routes>
-        </BrowserRouter>
-      </Container>
+        </Container>
+      </Box>
     </div>
   );
 }

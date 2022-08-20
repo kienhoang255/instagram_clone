@@ -2,8 +2,6 @@ import {
   Box,
   Flex,
   Stack,
-  AspectRatio,
-  Icon,
   Image,
   Text,
   Input,

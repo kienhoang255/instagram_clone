@@ -6,22 +6,32 @@ import {
   Tab,
   TabPanel,
   Grid,
+  Box,
 } from "@chakra-ui/react";
 import PostItem from "./PostItem";
 import { posts } from "../.././utils/db";
+import { MdVideoLibrary } from "react-icons/md";
+import { AiOutlineAppstore, AiFillTag } from "react-icons/ai";
 
 export default function Post({ id }) {
   const _id = id;
-  const filterId = posts.filter((post) => post.idUser == _id);
+  const filterId = posts.filter((post) => post.idUser === _id);
   // console.log(filterId);
   return (
     <Tabs pt="2em" align="center" defaultIndex={0}>
-      <TabList>
-        <Tab>POSTS</Tab>
-        <Tab pr="3em" pl="3em">
-          REELS
-        </Tab>
-        <Tab>TAGGED</Tab>
+      <TabList display="flex" alignItems="center" justifyContent="center">
+        <Box display="flex" alignItems="center" justifyContent="center">
+          <AiOutlineAppstore />
+          <Tab p="0">POSTS</Tab>
+        </Box >
+        <Box display="flex" alignItems="center" justifyContent="center" pl="3em" pr="3em">
+          <MdVideoLibrary />
+          <Tab p="0">REELS</Tab>
+        </Box>
+        <Box display="flex" alignItems="center" justifyContent="center">
+          <AiFillTag />
+          <Tab p="0">TAGGED</Tab>
+        </Box>
       </TabList>
 
       <TabPanels>

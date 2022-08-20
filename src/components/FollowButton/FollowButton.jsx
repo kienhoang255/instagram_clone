@@ -20,10 +20,10 @@ export default function FollowButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [loading, getLoading] = useState(false);
   const $ = document.querySelector.bind(document);
+  const [isFollowed, setIsFollowed] = useState(false)
   const handleOnClick = () => {
     const followBtn = $("#followBtn");
     const isFollow = $(".backgroundFollowBtn");
-    const isText1 = document.getElementById("followText");
 
     if (loading === false) {
       getLoading(true);
@@ -32,35 +32,19 @@ export default function FollowButton() {
       }, 500);
       followBtn.classList.add("backgroundFollowBtn");
     }
-    if (isFollow == null) return;
-    else {
+    if (isFollow == null) {
+      setIsFollowed(true)
+    } else {
       onOpen(true);
+
     }
-
-    // if (isFollow == null) {
-    //   isText.classList.add("disable");
-    //   isIcon.classList.remove("disable");
-    //   console.log("Da xoa text");
-    //   console.log(isIcon);
-    //   console.log(isText);
-    // } else {
-    //   isText.classList.remove("disable");
-    // isIcon.classList.add("disable");
-    //   console.log("Da xoa icon");
-    //   console.log(isIcon);
-    //   console.log(isText);
-    // }
-
-    // console.log(followBtn);
-    // console.log(isFollow);
-    // console.log(isIcon);
-    // console.log(isText);
   };
 
   const handleUnfollow = () => {
     const followBtn = $("#followBtn");
     onClose(true);
     followBtn.classList.remove("backgroundFollowBtn");
+    setIsFollowed(false)
   };
   return (
     <>
@@ -78,15 +62,10 @@ export default function FollowButton() {
         mr="16px"
         onClick={handleOnClick}
       >
-        <CheckIcon
-          id="followIcon"
-          // class="disable"
-        />
-        <Text
-          id="followText"
-          // class="disable"
-        >
-          Follow
+        {isFollowed && (<CheckIcon id="followIcon" />)}
+        {/* {isFollowed ?}<CheckIcon id="followIcon" /> */}
+        <Text id="followText">
+          {isFollowed ? "" : "Follow"}
         </Text>
       </Button>
 

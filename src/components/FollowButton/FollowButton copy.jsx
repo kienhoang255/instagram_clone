@@ -22,7 +22,7 @@ export default function FollowButton() {
 
   const [isFollow, setIsFollow] = useState(false);
 
-  const handleUnfollow = () => {};
+  const handleUnfollow = () => { };
   return (
     <>
       <Button
@@ -42,15 +42,9 @@ export default function FollowButton() {
         {isFollow && (
           <CheckIcon
             id="followIcon"
-            // class="disable"
           />
         )}
-        <Text
-          id="followText"
-          // class="disable"
-        >
-          {isFollow ? "Da follow" : "Follow"}
-        </Text>
+        <Text id="followText">{isFollow ? "Da follow" : "Follow"}</Text>
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>

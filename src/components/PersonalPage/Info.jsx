@@ -1,5 +1,5 @@
 import { Box, Button, Text } from "@chakra-ui/react";
-import { ChevronDownIcon, CheckIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 import React from "react";
 import FollowButton from "../FollowButton/FollowButton";
@@ -8,7 +8,7 @@ import { users } from "../../utils/db";
 
 export default function Info({ id }) {
   const _id = id;
-  const itemUser = users.find((user) => user.idUser == _id);
+  const itemUser = users.find((user) => user.idUser === _id);
   // console.log(itemUser);
   return (
     <Box>
