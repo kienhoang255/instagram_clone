@@ -8,7 +8,7 @@ import { users } from "../../utils/db";
 
 export default function Info({ id }) {
   const _id = id;
-  const itemUser = users.find((user) => user.idUser == _id);
+  const itemUser = users.find((user) => user.idUser === _id);
   // console.log(itemUser);
   return (
     <Box>

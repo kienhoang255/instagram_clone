@@ -4,6 +4,7 @@ import AvatarPerson from "./AvatarPerson";
 import Info from "./Info";
 
 function Profile({ id }) {
+  
   return (
     <Grid
       h="full"

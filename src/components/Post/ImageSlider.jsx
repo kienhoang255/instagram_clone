@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from "@chakra-ui/icons";
+import { GoPrimitiveDot } from 'react-icons/go';
 
 const slideStyles = {
   width: "100%",
@@ -14,7 +15,7 @@ const rightArrowStyles = {
   transform: "translate(0, -50%)",
   right: "32px",
   fontSize: "30px",
-  color: "#fff",
+  color: "#F5F5F5",
   zIndex: 1,
   cursor: "pointer",
 };
@@ -25,7 +26,7 @@ const leftArrowStyles = {
   transform: "translate(0, -50%)",
   left: "32px",
   fontSize: "30px",
-  color: "#fff",
+  color: "#F5F5F5",
   zIndex: 1,
   cursor: "pointer",
   borderRadius: "50%"
@@ -42,10 +43,10 @@ const dotsContainerStyles = {
 };
 
 const dotStyle = {
-  margin: "0 3px",
+  margin: "6px 0px",
   cursor: "pointer",
-  fontSize: "16px",
-  color: "gray.100"
+  fontSize: "12px",
+  color: "#B0B0B0"
 };
 
 const ImageSlider = ({ slides }) => {
@@ -73,11 +74,10 @@ const ImageSlider = ({ slides }) => {
       <div>
         <div onClick={goToPrevious} style={leftArrowStyles}>
           {/* ❰ */}
-          <ChevronLeftIcon color='#c2bbc9' borderRadius='50%' border='1px solid #c2bbc9'></ChevronLeftIcon>
-        </div>
+          <ChevronLeftIcon color='#A0A0A0' backgroundColor="#FFFFFF" opacity={0.6} filter="initial" borderRadius='50%' border='1px solid #E0E0E0' boxShadow="0px 0px 2.5px 2.5px #E8E8E8"></ChevronLeftIcon>        </div>
         <div onClick={goToNext} style={rightArrowStyles}>
           {/* ❱ */}
-          <ChevronRightIcon color='#c2bbc9' borderRadius='50%' border='1px solid #c2bbc9'></ChevronRightIcon>
+          <ChevronRightIcon color='#A0A0A0' backgroundColor="#FFFFFF" opacity={0.6} filter="initial" borderRadius='50%' border='1.5px solid #E0E0E0' boxShadow="0px 0px 2.5px 2.5px #E8E8E8"></ChevronRightIcon>
         </div>
       </div>
       <div style={slideStylesWidthBackground}></div>
@@ -88,7 +88,7 @@ const ImageSlider = ({ slides }) => {
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >
-            ●
+            <GoPrimitiveDot/>
           </div>
         ))}
       </div>

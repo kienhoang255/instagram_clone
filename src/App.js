@@ -2,8 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import Main from "./components/Main";
 import { Container } from "@chakra-ui/react";
-import Header from "./components/Header";
-import Post from "./components/Post";
+import Header from "./components/Header/Header";
+import Post from "./components/Post/Post";
+
 import {
   BrowserRouter as Router,
   BrowserRouter,
@@ -19,10 +20,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
 
-            {/* </Route>
-          <Route path="/post">
-          <Post/>
-          </Route> */}
+            <Route path="/post" element={<Post />} />
+
           </Routes>
         </BrowserRouter>
       </Container>
