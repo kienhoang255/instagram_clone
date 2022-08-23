@@ -8,7 +8,6 @@ export default function StoryList({ id }) {
   const _id = id;
   const filterId = stories.filter((story) => story.idUser === _id);
   const $ = document.querySelector.bind(document)
-  const [state, setState] = useState("")
   const [isDown, setIsDown] = useState(false)
   const [startX, setStartX] = useState("")
   const [scrollLeft, setScrollLeft] = useState("")

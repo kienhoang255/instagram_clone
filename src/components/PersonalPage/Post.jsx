@@ -12,11 +12,11 @@ import PostItem from "./PostItem";
 import { posts } from "../.././utils/db";
 import { MdVideoLibrary } from "react-icons/md";
 import { AiOutlineAppstore, AiFillTag } from "react-icons/ai";
+import Reels from "./Reels";
 
 export default function Post({ id }) {
   const _id = id;
   const filterId = posts.filter((post) => post.idUser === _id);
-  // console.log(filterId);
   return (
     <Tabs pt="2em" align="center" defaultIndex={0}>
       <TabList display="flex" alignItems="center" justifyContent="center">
@@ -36,17 +36,33 @@ export default function Post({ id }) {
 
       <TabPanels>
         <TabPanel>
+
           <Grid templateColumns="repeat(3, 1fr)" gap={7}>
             {filterId.map((post, index) => (
               <PostItem item={post} key={index} />
             ))}
           </Grid>
+
         </TabPanel>
         <TabPanel>
-          <p>two!</p>
+
+          <Grid templateColumns='repeat(4, 1fr)' gap={7}>
+            <Reels />
+            <Reels />
+            <Reels />
+            <Reels />
+            <Reels />
+          </Grid>
+
         </TabPanel>
         <TabPanel>
-          <p>three!</p>
+
+          <Grid templateColumns="repeat(3, 1fr)" gap={7}>
+            {filterId.map((post, index) => (
+              <PostItem item={post} key={index} />
+            ))}
+          </Grid>
+
         </TabPanel>
       </TabPanels>
     </Tabs>

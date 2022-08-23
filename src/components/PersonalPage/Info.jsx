@@ -5,28 +5,20 @@ import React from "react";
 import FollowButton from "../FollowButton/FollowButton";
 import ExpandButton from "../ExpandButton/ExpandButton";
 import { users } from "../../utils/db";
+import { Link } from "react-router-dom";
 
 export default function Info({ id }) {
   const _id = id;
   const itemUser = users.find((user) => user.idUser === _id);
-  // console.log(itemUser);
   return (
-    <Box>
+    <React.Fragment>
       <Box pt="5px" pl="5px" display="flex" alignItems="center">
-        <Text fontSize="full" as="samp" fontWeight="light:10" pr="16px">
-          {itemUser.nameUser}
-        </Text>
-        <Button
-          colorScheme="gray.300"
-          variant="outline"
-          size="sm"
-          fontWeight="bold"
-          borderRadius="4px"
-          mr="16px"
-          borderColor="#bbbbbb"
-        >
-          Nhắn tin
-        </Button>
+        <Text fontSize="full" as="samp" fontWeight="light:10" pr="16px">{itemUser.nameUser}</Text>
+        <Link to="/message">
+          <Button colorScheme="gray.300" variant="outline" size="sm" fontWeight="bold" borderRadius="4px" mr="16px" borderColor="#bbbbbb" >
+            Nhắn tin
+          </Button>
+        </Link>
         <FollowButton />
         <Button
           colorScheme="gray.300"
@@ -85,6 +77,6 @@ export default function Info({ id }) {
           MESSAGES
         </Text>
       </Box>
-    </Box>
+    </React.Fragment>
   );
 }

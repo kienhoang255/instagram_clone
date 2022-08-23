@@ -1,23 +1,26 @@
 import { Box, Button, Divider, Grid, GridItem, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure } from '@chakra-ui/react'
 import { FaTimes } from "react-icons/fa";
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SelectChat from './SelectChat';
 import TargetChat from "./TargetChat"
 import { users } from '../../utils/db';
 
 export default function MessageModal({ idUser }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [isSelected, setIsSelected] = useState(false)
+    const [isSelected, setIsSelected] = useState("")
+
+    const selectChatter = users.find(user => user.idUser === isSelected)
+
     const _idUser = idUser
-    // const findUser = users.find(user => user.idUser === _idUser)
-    // const friendList = findUser.filter((friendId) => friendId. > "0")
-    const findUser = users.filter((idUser) => idUser.idUser === _idUser)
-    // for (var key in findUser) {
-    //     console.log(findUser[key])
+    const user = users.find(user => user.idUser === _idUser)
+    // const listFriends = user.friends
+    // const listFriendsArray = []
+    // console.log(listFriendsArray)
+    // for (var friend1 in listFriends) {
+    //     var id = users.find(friend => friend.idUser === listFriends[friend1])
+    //     listFriendsArray.push(id)
     // }
-    // for (var friends of findUser) {
-    //     console.log(friends)
-    // }
+
     return (
         <>
 
@@ -37,15 +40,20 @@ export default function MessageModal({ idUser }) {
                         <Divider />
                         <Text>Next:</Text>
                         <Grid templateColumns='repeat(2, 1fr)' gap={1}>
-                            {isSelected && (<TargetChat />)}
+                            <TargetChat selectChat={selectChatter} />
+
+
                         </Grid>
                         <Input autoFocus variant='flushed' placeholder='Search' />
                     </ModalHeader>
                     <ModalBody>
                         <Text>Suggestions</Text>
+                        <Stack direction={['column']}>
 
-                        <Stack direction='col'>
-                            <SelectChat />
+                            {/* {listFriendsArray.map((friend, index) => (
+                                <SelectChat key={index} friend={friend} isSelected={isSelected} setIsSelected={setIsSelected} />
+                            ))} */}
+
                         </Stack>
                     </ModalBody>
 

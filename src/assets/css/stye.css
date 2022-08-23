@@ -8,6 +8,56 @@
     justify-content: center;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center-jus{
+    display: flex;
+    justify-content: center;
+}
+.center-ali{
+    display: flex;
+    align-items: center;
+}
+.center-col-jus{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.center-col-ali {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.center-row-jus {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.center-row-ali {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
 #wrapper {
     background-color: #fafafa;
     display: flex;
@@ -60,3 +110,178 @@
     z-index: 1;
     cursor: pointer;
 }
+
+#selectChat {
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+#message {
+    max-height: 870px;
+}
+
+#chat-form {
+    max-height: 100%;
+}
+
+#circleColor,
+#wrap-message {
+    height: 700px;
+    overflow: hidden;
+    overflow-y:auto;
+    position: relative;
+    background: white;
+    cursor: context-menu;
+}
+
+.message-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.message .self-message {
+    position: relative;
+    right:20px;
+    text-align: right;
+    max-width: 65%;
+    background-color:#efefef;
+    border:1px solid #efefef;
+    border-radius: 25px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.message .subject-message {
+    position: relative;
+    left:45px;
+    text-align: right;
+    max-width: 65%;
+    background-color: white;
+    border:1px solid #efefef;
+    border-radius: 25px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.self {
+    justify-content: flex-end;
+    
+}
+
+.object {
+    justify-content: flex-start;
+}
+
+.avatar-subject {
+    position: relative;
+    bottom:35px;
+    left:5px;
+}
+
+.time-mes {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.mes-option {
+    width: 100px;
+    position: relative;
+    right: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.mes-option-sub {
+    width: 100px;
+    position: relative;
+    left: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* post */
+.post-type {
+    background-color:transparent;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content:flex-end;
+    top:20px;
+    z-index:1;
+}
+.post-item {
+    /* display: flex; */
+}
+.post-item {
+    width:100%;
+    height: 100%;
+}
+.hover-box {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    bottom:100%;
+    /* z-index: 1; */
+}
+.post-icons {
+    background-color: rgba(0,0,0,0.3);
+    color:white;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    height:100%;
+    z-index: 1;
+}
+
+.post-icon-bg {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    z-index:2;
+    cursor: pointer;
+}
+/* reel */
+.reel-icon-bg {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    z-index:2;
+    cursor: pointer;
+}
+.reel-icons {
+    /* background-color: rgba(0,0,0,0.1); */
+    background-color:transparent;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content:flex-start;
+    align-items:flex-end;
+    width: 100%;
+    height:100%;
+    z-index: 1;
+    padding: 10px;
+}
+
