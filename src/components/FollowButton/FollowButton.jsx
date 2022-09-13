@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import FollowButtonCss from "../../assets/css/Follow.css";
+import React, { useState } from 'react';
+import FollowButtonCss from '../../assets/css/Follow.css';
 import {
   Modal,
   ModalOverlay,
@@ -12,39 +12,38 @@ import {
   useDisclosure,
   Text,
   Divider,
-} from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
-import AvatarPerson from "../PersonalPage/AvatarPerson";
+} from '@chakra-ui/react';
+import { CheckIcon } from '@chakra-ui/icons';
+import AvatarPerson from '../PersonalPage/AvatarPerson';
 
 export default function FollowButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [loading, getLoading] = useState(false);
   const $ = document.querySelector.bind(document);
-  const [isFollowed, setIsFollowed] = useState(false)
+  const [isFollowed, setIsFollowed] = useState(false);
   const handleOnClick = () => {
-    const followBtn = $("#followBtn");
-    const isFollow = $(".backgroundFollowBtn");
+    const followBtn = $('#followBtn');
+    const isFollow = $('.backgroundFollowBtn');
 
     if (loading === false) {
       getLoading(true);
       setTimeout(() => {
         getLoading(false);
       }, 500);
-      followBtn.classList.add("backgroundFollowBtn");
+      followBtn.classList.add('backgroundFollowBtn');
     }
     if (isFollow == null) {
-      setIsFollowed(true)
+      setIsFollowed(true);
     } else {
       onOpen(true);
-
     }
   };
 
   const handleUnfollow = () => {
-    const followBtn = $("#followBtn");
+    const followBtn = $('#followBtn');
     onClose(true);
-    followBtn.classList.remove("backgroundFollowBtn");
-    setIsFollowed(false)
+    followBtn.classList.remove('backgroundFollowBtn');
+    setIsFollowed(false);
   };
   return (
     <>
@@ -62,11 +61,9 @@ export default function FollowButton() {
         mr="16px"
         onClick={handleOnClick}
       >
-        {isFollowed && (<CheckIcon id="followIcon" />)}
+        {isFollowed && <CheckIcon id="followIcon" />}
         {/* {isFollowed ?}<CheckIcon id="followIcon" /> */}
-        <Text id="followText">
-          {isFollowed ? "" : "Follow"}
-        </Text>
+        <Text id="followText">{isFollowed ? '' : 'Follow'}</Text>
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
@@ -80,12 +77,7 @@ export default function FollowButton() {
 
           <ModalFooter display="flex" flexDirection="column" width="full">
             <Divider w="full" orientation="horizontal" />
-            <Button
-              w="full"
-              variant="ghost"
-              color="#ee5460"
-              onClick={handleUnfollow}
-            >
+            <Button w="full" variant="ghost" color="#ee5460" onClick={handleUnfollow}>
               Unfollow
             </Button>
             <Divider orientation="horizontal" />

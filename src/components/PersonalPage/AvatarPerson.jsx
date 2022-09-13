@@ -1,11 +1,6 @@
-import {
-  Avatar,
-  CircularProgress,
-  CircularProgressLabel,
-  Stack,
-} from "@chakra-ui/react";
-import style from "../../assets/css/stye.css"
-import React, { useState } from "react";
+import { Avatar, CircularProgress, CircularProgressLabel } from '@chakra-ui/react';
+import style from '../../assets/css/stye.css';
+import React, { useState } from 'react';
 
 export default function Avatar_person() {
   const [hasStories, getHasStories] = useState(false);
@@ -23,7 +18,7 @@ export default function Avatar_person() {
           size="lg"
           width={{ base: 20, lg: 150 }}
           height={{ base: 20, lg: 150 }}
-          src={require("../../assets/images/avatar.jpg")}
+          src={require('../../assets/images/avatar.jpg')}
         />
       </CircularProgressLabel>
     </CircularProgress>

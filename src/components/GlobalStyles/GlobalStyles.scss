@@ -1,0 +1,50 @@
+@import 'normalize.css';
+
+:root {
+  --primary-color: rgb(255, 48, 65);
+  --primary-btn-color: rgb(0, 149, 246);
+}
+
+//Tippy theme
+.tippy-box[data-theme~='primary'] {
+  background-color: white;
+  color: black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.tippy-box[data-theme~='tomato'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: tomato;
+}
+.tippy-box[data-theme~='primary'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: white;
+}
+.tippy-box[data-theme~='tomato'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: white;
+}
+.tippy-box[data-theme~='tomato'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: black;
+}
+
+.tippy-box[data-theme~='instagram'] {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.tippy-box[data-theme~='instagram'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: var(--primary-color);
+}
+.tippy-box[data-theme~='instagram'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: var(--primary-color);
+}
+.tippy-box[data-theme~='instagram'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: white;
+}
+.tippy-box[data-theme~='instagram'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: black;
+}
+
+//Tippy css
+.tippy-content {
+  padding: 0px;
+}

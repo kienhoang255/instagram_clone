@@ -1,0 +1,58 @@
+.userTag_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.userTag_avatar {
+  width: 44px;
+  height: 44px;
+}
+
+.userTag_name {
+  width: 250px;
+  padding-left: 10px;
+  p:first-child {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  p:last-child {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+  }
+}
+
+//Avatar
+.avatar-user1,
+.avatar-user2,
+.avatar-user {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.delete_tag {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.avatar-holder {
+  display: flex;
+  min-height: 40px;
+  min-width: 64px;
+}
+
+.avatar-user1 {
+}
+
+.avatar-user2 {
+  position: relative;
+  right: 20px;
+  top: 10px;
+}

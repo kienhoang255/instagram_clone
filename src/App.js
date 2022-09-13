@@ -1,32 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Main from "./components/Main";
-import { Box, Container } from "@chakra-ui/react";
-import Header from "./components/Header";
-import Post from "./components/Post";
-import Message from "./components/Message/Message";
-import {
-  BrowserRouter as Router,
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { Container } from '@chakra-ui/react';
+import Header from './Pages/Header/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Message from './components/Message/Message';
+import PersonalPage from './components/PersonalPage/PersonPage';
 function App() {
   return (
     <div className="App">
-      <Box bg="#fafafa" w="100%" h="100%">
+      <Router>
         <Header />
         <Container maxWidth="62em">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Main />} ></Route>
-              <Route path="/post" element={<Post />}></Route>
-              <Route path="/message" element={<Message />}></Route>
-            </Routes>
-          </BrowserRouter>
-
+          <Routes>
+            <Route path="/message" element={<Message />}></Route>
+            <Route path="/profile" element={<PersonalPage />}></Route>
+          </Routes>
         </Container>
-      </Box>
+      </Router>
     </div>
   );
 }

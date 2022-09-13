@@ -13,9 +13,19 @@ export default function Info({ id }) {
   return (
     <React.Fragment>
       <Box pt="5px" pl="5px" display="flex" alignItems="center">
-        <Text fontSize="full" as="samp" fontWeight="light:10" pr="16px">{itemUser.nameUser}</Text>
+        <Text fontSize="full" as="samp" fontWeight="light:10" pr="16px">
+          {itemUser.nameUser}
+        </Text>
         <Link to="/message">
-          <Button colorScheme="gray.300" variant="outline" size="sm" fontWeight="bold" borderRadius="4px" mr="16px" borderColor="#bbbbbb" >
+          <Button
+            colorScheme="gray.300"
+            variant="outline"
+            size="sm"
+            fontWeight="bold"
+            borderRadius="4px"
+            mr="16px"
+            borderColor="#bbbbbb"
+          >
             Nhắn tin
           </Button>
         </Link>

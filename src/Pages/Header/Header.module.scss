@@ -1,0 +1,67 @@
+.header {
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+.items {
+  width: 975px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 330px;
+}
+
+.search {
+  width: 268px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 330px;
+}
+
+.button {
+  background-color: aquamarine;
+}
+
+.btnHeaderBar {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+  padding: 8px 12px;
+}
+
+.avatar {
+  padding: 8px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 230px;
+  font-size: 16px;
+  padding: 8px 14px;
+
+  &:last-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.tippy-dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 40px;
+}
