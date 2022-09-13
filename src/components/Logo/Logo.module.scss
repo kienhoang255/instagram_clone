@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  float: left;
+  align-items: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.logo-img {
+  position: relative;
+  top: 5px;
+}
+
+.btn {
+  border-radius: 0;
+  font-size: 15px;
+  font-weight: lighter;
+  width: 127px;
+  height: 37px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
