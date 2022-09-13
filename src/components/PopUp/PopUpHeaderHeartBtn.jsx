@@ -15,7 +15,6 @@ const cx = classNames.bind(styles);
 const PopUpHeaderHeartBtn = forwardRef(({ children }, ref) => {
   return (
     <Tippy
-      visible={true}
       ref={ref}
       interactive={true}
       theme="primary"
