@@ -1,19 +1,61 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import Button from '../../components/Button/Button';
 import Tippy from '@tippyjs/react';
 import { IoPersonSharp } from 'react-icons/io5';
-import { useEffect } from 'react';
-import { Avatar } from '@chakra-ui/react';
 import PopUpHeaderHeartBtn from '../../components/PopUp/PopUpHeaderHeartBtn';
+import { useMultiStyleConfig, useTab } from '@chakra-ui/react';
+import Modal from '../../components/Modal/Modal';
+import useModal from '../../Hooks/useModal';
 
 const cx = classNames.bind(styles);
 
-export default function HeaderBtn({ items }) {
-  const tippyCall = items.tippy;
+const HeaderBtn = forwardRef(({ items }, ref) => {
+  //Notification
+  const tippyCall = items.little;
   const [openTippy, setOpenTippy] = useState(true);
-  const [openTippy1, setOpenTippy1] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenTippy(false);
+    }, 3000);
+  }, [tippyCall]);
+
+  //Modal
+  const { isShowing, toggle } = useModal();
+  const modal = items.modal;
+
+  //Change icon when select
+  const tabProps = useTab({ ...items, ref });
+  const isSelected = !!tabProps['aria-selected'];
+  const styles = useMultiStyleConfig('Tabs', tabProps);
+
+  const renderBtnIcon = () => {
+    if (modal)
+      return (
+        <div>
+          <Button className={cx('btnHeaderBar')} onClick={toggle}>
+            {isSelected ? items.icon2nd : items.icon}
+          </Button>
+          <Modal isShowing={isShowing} hide={toggle} />
+        </div>
+      );
+    else
+      return (
+        <Button
+          ref={ref}
+          __css={styles.tab}
+          bottomDot={items.bottomDot}
+          to={items.to}
+          href={items.href}
+          target={items.target}
+          className={cx('btnHeaderBar')}
+          {...tabProps}
+        >
+          {isSelected ? items.icon2nd : items.icon}
+        </Button>
+      );
+  };
 
   const followRequests = [
     {
@@ -27,12 +69,6 @@ export default function HeaderBtn({ items }) {
       friends: ['2'],
     },
   ];
-
-  useEffect(() => {
-    setTimeout(() => {
-      setOpenTippy(false);
-    }, 3000);
-  }, [tippyCall]);
 
   return (
     <>
@@ -49,17 +85,15 @@ export default function HeaderBtn({ items }) {
         >
           <div>
             <PopUpHeaderHeartBtn arrow items={followRequests} className={cx('btn')}>
-              <Button bottomDot={items.bottomDot} onClick={console.log('123')} className={cx('btnHeaderBar')}>
-                {items.icon}
-              </Button>
+              {renderBtnIcon()}
             </PopUpHeaderHeartBtn>
           </div>
         </Tippy>
       ) : (
-        <Button bottomDot={items.bottomDot} to={items.to} href={items.href} target={items.target} className={cx('btnHeaderBar')}>
-          {items.icon}
-        </Button>
+        <>{renderBtnIcon()}</>
       )}
     </>
   );
-}
+});
+
+export default HeaderBtn;

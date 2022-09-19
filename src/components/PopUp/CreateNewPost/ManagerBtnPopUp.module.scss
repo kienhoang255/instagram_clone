@@ -1,0 +1,27 @@
+.container {
+  border-radius: 6px;
+  background-color: rgba(26, 26, 26, 0.8);
+  color: rgb(142, 142, 142);
+}
+
+.icon-content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  &:last-child {
+    border-bottom: none;
+  }
+  &:focus {
+    color: white;
+  }
+}
+
+.icon {
+}
+
+.content {
+}

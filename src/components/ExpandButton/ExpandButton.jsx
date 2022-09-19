@@ -1,19 +1,7 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
-import {
-  Button,
-  Divider,
-  IconButton,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { Button, Divider, IconButton, Modal, ModalContent, ModalFooter, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 
-import React from "react";
+import React from 'react';
 
 export default function ExpandButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,12 +21,7 @@ export default function ExpandButton() {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalFooter
-            display="flex"
-            alignItems="center"
-            flexDirection="column"
-            w="full"
-          >
+          <ModalFooter display="flex" alignItems="center" flexDirection="column" w="full">
             <Button color="#ee5460" variant="ghost" w="full">
               Block
             </Button>

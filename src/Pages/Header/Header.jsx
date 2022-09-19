@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { Avatar } from '@chakra-ui/react';
+import { Avatar, TabList, Tabs } from '@chakra-ui/react';
 import {
   AiOutlineHeart,
   AiOutlineCompass,
@@ -15,58 +15,56 @@ import {
 import { RiMessengerFill, RiMessengerLine } from 'react-icons/ri';
 import Logo from '../../components/Logo/Logo';
 import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button';
 import PopUp from '../../components/PopUp/PopUp';
 import { IoPersonCircleOutline } from 'react-icons/io5';
 import { CgPentagonDown } from 'react-icons/cg';
 import { BsGearWide } from 'react-icons/bs';
 import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
-import { useState } from 'react';
 import HeaderBtn from './HeaderBtn';
 
 const cx = classNames.bind(styles);
 
-const LogoRef = forwardRef((props, ref) => {
-  return <Logo ref={ref}></Logo>;
-});
-
 export default function Header() {
-  const [iconActive, setIconAvtive] = useState(false);
-
   const iconHeaderBar = [
     {
+      id: 1,
       icon: <AiOutlineHome />,
-      activeIcon: <AiFillHome />,
+      icon2nd: <AiFillHome />,
+      to: '/',
     },
     {
+      id: 2,
       icon: <RiMessengerLine />,
-      activeIcon: <RiMessengerFill />,
+      icon2nd: <RiMessengerFill />,
       to: '/message',
     },
     {
+      id: 3,
       icon: <AiOutlinePlusSquare />,
-      activeIcon: <AiFillPlusSquare />,
-      href: 'https://fullstack.edu.vn/',
-      target: '_blank',
+      icon2nd: <AiFillPlusSquare />,
+      modal: true,
+      trigger: `toggle`,
     },
     {
+      id: 4,
       icon: <AiOutlineCompass />,
-      activeIcon: <AiFillCompass />,
+      icon2nd: <AiFillCompass />,
     },
     {
+      id: 5,
       icon: <AiOutlineHeart />,
-      activeIcon: <AiFillHeart />,
+      icon2nd: <AiFillHeart />,
       bottomDot: true,
-      tippy: true,
+      little: 'true',
       content: '5',
     },
   ];
-
   const itemProfile = [
     {
       leftIcon: <IoPersonCircleOutline />,
       title: 'Profile',
       hover: true,
+      to: '/profile',
     },
     {
       leftIcon: <CgPentagonDown />,
@@ -88,10 +86,10 @@ export default function Header() {
       hover: true,
     },
   ];
+
   return (
     <div className={cx('header')}>
       <div className={cx('items')}>
-        {/* <LogoRef className={cx('logo')} /> */}
         <div className={cx('logo')}>
           <Logo />
         </div>
@@ -99,9 +97,13 @@ export default function Header() {
           <Input />
         </div>
         <div className={cx('container')}>
-          {iconHeaderBar.map((items, index) => (
-            <HeaderBtn items={items} key={index} />
-          ))}
+          <Tabs variant="unstyle">
+            <TabList>
+              {iconHeaderBar.map((items, index) => (
+                <HeaderBtn items={items} key={index} />
+              ))}
+            </TabList>
+          </Tabs>
           <div className={cx('avatar')}>
             <PopUp arrow items={itemProfile} className={cx('btn')}>
               <Avatar size="xs" />

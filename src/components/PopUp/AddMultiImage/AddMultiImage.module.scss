@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.img {
+  width: 94px;
+  height: 94px;
+  background-color: red;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 5px;
+  &:focus {
+  }
+
+  span {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.btn {
+  width: 48px;
+  height: 48px;
+  svg {
+    font-size: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+}

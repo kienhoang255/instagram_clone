@@ -14,8 +14,8 @@ const Button = forwardRef(
       to,
       href,
       types,
-      hover = false,
       className,
+      hover = false,
       user = false,
       primary = false,
       bold = false,
@@ -55,7 +55,7 @@ const Button = forwardRef(
     return (
       <Types className={classes} {...props} ref={ref}>
         {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
-        <span className={Title}>{children}</span>
+        <div className={Title}>{children}</div>
         {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
       </Types>
     );

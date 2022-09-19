@@ -1,5 +1,5 @@
 import Tippy from '@tippyjs/react';
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './PopUp.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -16,6 +16,7 @@ const PopUpHeaderHeartBtn = forwardRef(({ children }, ref) => {
   return (
     <Tippy
       ref={ref}
+      trigger="click"
       interactive={true}
       theme="primary"
       maxWidth="500px"

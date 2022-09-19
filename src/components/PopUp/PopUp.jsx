@@ -1,5 +1,5 @@
 import Tippy from '@tippyjs/react/headless';
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './PopUp.module.scss';
 import Button from '../Button/Button';
@@ -8,15 +8,22 @@ import { forwardRef } from 'react';
 
 const cx = classNames.bind(styles);
 
-const PopUp = forwardRef(({ children, items, arrow = true, events, className }, ref) => {
-  const event = events;
-  const [visiblePopUp, setVisiblePopUp] = useState(event);
-
+const PopUp = forwardRef(({ children, items, arrow = true, className }, ref) => {
   const classes = cx({ [className]: className });
 
   const renderBtn = () => {
     return items.map((item, index) => (
-      <Button key={index} item={item} hover={item.hover} user={item.user} leftIcon={item.leftIcon} className={classes}>
+      <Button
+        key={index}
+        item={item}
+        hover={item.hover}
+        to={item.to}
+        href={item.href}
+        user={item.user}
+        target={item.target}
+        leftIcon={item.leftIcon}
+        className={classes}
+      >
         {item.title}
       </Button>
     ));
@@ -26,7 +33,7 @@ const PopUp = forwardRef(({ children, items, arrow = true, events, className }, 
     <Tippy
       ref={ref}
       arrow={true}
-      visible={event}
+      trigger="click"
       placement="bottom-end"
       interactive={true}
       render={(attrs) => (

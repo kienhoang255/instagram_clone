@@ -3,6 +3,7 @@ import Header from './Pages/Header/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Message from './components/Message/Message';
 import PersonalPage from './components/PersonalPage/PersonPage';
+import PersonPage from './components/PersonalPage/PersonPage';
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
         <Header />
         <Container maxWidth="62em">
           <Routes>
+            <Route path="/profile" element={<PersonPage />}></Route>
             <Route path="/message" element={<Message />}></Route>
             <Route path="/profile" element={<PersonalPage />}></Route>
           </Routes>

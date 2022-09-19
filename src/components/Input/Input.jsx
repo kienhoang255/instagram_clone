@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Input.module.scss';
 import { BiSearch } from 'react-icons/bi';
@@ -20,11 +20,6 @@ export default function Input() {
     if (valueInput !== '') {
       setValueInput('');
     }
-  };
-
-  const clearValue = () => {
-    setOnInput(false);
-    console.log(onInput);
   };
 
   const recentItems = [
@@ -51,29 +46,11 @@ export default function Input() {
     },
   ];
 
-  //https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
-  function useOutsideAlerter(ref) {
-    useEffect(() => {
-      function handleClickOutside(event) {
-        if (ref.current && !ref.current.contains(event.target)) {
-          setOnInput(false);
-        }
-      }
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [ref]);
-  }
-
-  const wrapperRef = useRef(null);
-  useOutsideAlerter(wrapperRef);
-
   return (
     <Tippy
       arrow={true}
       interactive={true}
-      visible={onInput}
+      trigger="click"
       placement="bottom"
       theme="primary"
       content={
@@ -98,7 +75,7 @@ export default function Input() {
         </div>
       }
     >
-      <div className={cx('content')} ref={wrapperRef}>
+      <div className={cx('content')}>
         {onInput ? (
           <>
             <input
@@ -113,8 +90,8 @@ export default function Input() {
                 return setValueInput(value);
               }}
             />
-            <span onClick={clearValue} className={cx('icon-input')}>
-              <MdCancel onClick={clearValue} />
+            <span className={cx('icon-input')}>
+              <MdCancel />
             </span>
           </>
         ) : (
