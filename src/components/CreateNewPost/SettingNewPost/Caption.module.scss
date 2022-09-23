@@ -1,0 +1,53 @@
+.filter-caption {
+  width: 30%;
+  height: 100%;
+}
+
+.caption-text {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.text-textarea {
+  min-width: 99%;
+  width: 100%;
+  padding: 0 16px;
+  height: 160px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  border: none;
+}
+
+.sub-caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px 8px;
+}
+
+.emoji-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.limit-characters {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.toggle {
+  overflow-y: hidden;
+  overflow: hidden;
+  overflow-x: hidden;
+  height: 80%;
+}

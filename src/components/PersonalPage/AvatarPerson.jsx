@@ -1,5 +1,5 @@
 import { Avatar, CircularProgress, CircularProgressLabel } from '@chakra-ui/react';
-import style from '../../assets/css/stye.css';
+// import style from '../../assets/css/stye.css';
 import React, { useState } from 'react';
 
 export default function Avatar_person() {

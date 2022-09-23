@@ -1,8 +1,8 @@
-import { Box, Button } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { Box } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import StoryItem from './StoryItem';
 import { stories } from '../../utils/db';
-import { style } from '../../assets/css/stye.css';
+// import { style } from '../../assets/css/stye.css';
 
 export default function StoryList({ id }) {
   const _id = id;
@@ -14,16 +14,16 @@ export default function StoryList({ id }) {
   const [x, setX] = useState('');
   const [walk, setWalk] = useState('');
 
-  const onPointerEvent = (e) => {
-    const slider = $('#btn-wrapper');
-    if (e.type === 'pointerdown') {
-      slider.classList.add('active');
-      console.log('nam');
-    } else {
-      slider.classList.remove('active');
-      console.log('tha');
-    }
-  };
+  // const onPointerEvent = (e) => {
+  //   const slider = $('#btn-wrapper');
+  //   if (e.type === 'pointerdown') {
+  //     slider.classList.add('active');
+  //     console.log('nam');
+  //   } else {
+  //     slider.classList.remove('active');
+  //     console.log('tha');
+  //   }
+  // };
 
   const handleOnMouse = (event) => {
     const slider = $('#wrapper');

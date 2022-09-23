@@ -8,6 +8,9 @@
 .userTag_avatar {
   width: 44px;
   height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .userTag_name {

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Profile from './Profile';
 import StoryList from '../Story/StoryList';
 import Post from './Post';
-import style from '../../assets/css/stye.css';
+// import style from '../../assets/css/stye.css';
 
 export default function PersonPage() {
-  const [idFind, getIdFind] = useState('1');
+  const idFind = '1';
   return (
     <React.Fragment>
       <Profile id={idFind} />

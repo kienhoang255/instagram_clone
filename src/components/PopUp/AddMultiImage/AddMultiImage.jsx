@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../Button/Button';
 import classNames from 'classnames/bind';
 import styles from './AddMultiImage.module.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -15,9 +14,10 @@ export default function AddMultiImage() {
         </span>
       </button>
 
-      <Button className={cx('btn')}>
+      <label htmlFor="add-more-file" className={cx('btn')}>
         <AiOutlinePlus />
-      </Button>
+      </label>
+      <input className={cx('input-file')} type="file" id="add-more-file" name="avatar" accept="image/*" />
     </div>
   );
 }

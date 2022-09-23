@@ -37,7 +37,7 @@
 }
 
 .tippy-box {
-  width: 360px;
+  width: 370px;
   height: 380px;
 }
 
@@ -52,6 +52,10 @@
 .tippy-content {
   overflow: hidden;
   overflow-y: auto;
-  height: 335px;
-  width: 350px;
+  height: 345px;
+  width: 370px;
+}
+
+.clear-btn {
+  color: var(--primary-btn-color);
 }

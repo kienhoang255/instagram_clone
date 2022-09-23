@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.img {
+  object-fit: fill;
+}
+
+.input {
+  height: 36px;
+  width: 100%;
+  padding: 4px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  outline: none;
+}

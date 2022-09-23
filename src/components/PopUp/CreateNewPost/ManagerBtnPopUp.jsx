@@ -7,12 +7,6 @@ import Button from '../../Button/Button';
 const cx = classNames.bind(styles);
 
 export default function ManagerBtnPopUp({ children, className, btn, components, offSet, placement }) {
-  let Types = Button;
-  if (components) Types = 'div';
-
-  let controls = btn;
-  if (components) controls = components;
-
   const classes = cx('container', { [className]: className });
 
   return (
@@ -23,11 +17,17 @@ export default function ManagerBtnPopUp({ children, className, btn, components, 
       interactive={true}
       render={(attrs) => (
         <div className={classes} tabIndex="-1" {...attrs}>
-          {controls?.map((items, key) => (
-            <Types key={key} rightIcon={items.icon} className={cx('icon-content')}>
-              <div className={cx('content')}>{items.content}</div>
-            </Types>
-          ))}
+          {btn
+            ? btn.map((items, key) => (
+                <Button key={key} rightIcon={items.icon} className={cx('icon-content')}>
+                  <div className={cx('content')}>{items.content}</div>
+                </Button>
+              ))
+            : components.map((items, key) => (
+                <div key={key} className={cx('icon-content')}>
+                  <div className={cx('content')}>{items.content}</div>
+                </div>
+              ))}
         </div>
       )}
     >

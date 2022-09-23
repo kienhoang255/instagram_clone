@@ -6,8 +6,8 @@ import Tippy from '@tippyjs/react';
 import { IoPersonSharp } from 'react-icons/io5';
 import PopUpHeaderHeartBtn from '../../components/PopUp/PopUpHeaderHeartBtn';
 import { useMultiStyleConfig, useTab } from '@chakra-ui/react';
-import Modal from '../../components/Modal/Modal';
 import useModal from '../../Hooks/useModal';
+import CreateNewPost from '../../components/CreateNewPost/CreateNewPost';
 
 const cx = classNames.bind(styles);
 
@@ -37,7 +37,7 @@ const HeaderBtn = forwardRef(({ items }, ref) => {
           <Button className={cx('btnHeaderBar')} onClick={toggle}>
             {isSelected ? items.icon2nd : items.icon}
           </Button>
-          <Modal isShowing={isShowing} hide={toggle} />
+          <CreateNewPost isShowing={isShowing} hide={toggle} />
         </div>
       );
     else

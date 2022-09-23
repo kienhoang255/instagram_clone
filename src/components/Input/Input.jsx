@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Input.module.scss';
 import { BiSearch } from 'react-icons/bi';
@@ -14,50 +14,49 @@ const cx = classNames.bind(styles);
 export default function Input() {
   const [onInput, setOnInput] = useState(false);
   const [valueInput, setValueInput] = useState('');
+  const [save, setSave] = useState('Search');
+  const [openTippy, setOpenTippy] = useState(false);
 
   const handleOnClick = () => {
     setOnInput(true);
-    if (valueInput !== '') {
-      setValueInput('');
-    }
   };
 
-  const recentItems = [
-    {
-      idUser: '1',
-      nameUser: 'ngvinh.28',
-      rName: 'Gia Vinh',
-      avatar: '.././src/img/avatar.jpg',
-      user: true,
-    },
-    {
-      idUser: '2',
-      nameUser: 'vdau31.11',
-      rName: 'Say Dậu',
-      avatar: '.././src/img/avatar.jpg',
-      user: true,
-    },
-    {
-      idUser: '3',
-      nameUser: 'kienhoang255',
-      rName: 'Kien Hoang',
-      avatar: '.././src/img/avatar.jpg',
-      user: true,
-    },
-  ];
+  const onClearText = () => {
+    setValueInput('');
+    setSave('Search');
+    setOpenTippy(false);
+    setOnInput(false);
+  };
+
+  const handleOnFocus = () => {
+    setOnInput(true);
+    setOpenTippy(true);
+  };
+
+  const handleOnBlur = () => {};
+
+  useEffect(() => {
+    if (valueInput !== '') setSave(valueInput);
+    if (save === 'Search') setValueInput('');
+  }, [onInput, valueInput, save]);
 
   return (
     <Tippy
       arrow={true}
       interactive={true}
-      trigger="click"
+      maxWidth="375px"
+      visible={openTippy}
       placement="bottom"
       theme="primary"
+      onClickOutside={() => {
+        setOnInput(false);
+        setOpenTippy(false);
+      }}
       content={
         <div className={cx('tippy-box')}>
           <div className={cx('tippy-header')}>
             <div>Recent</div>
-            <Button primary bold>
+            <Button className={cx('clear-btn')} bold>
               Clear All
             </Button>
           </div>
@@ -79,18 +78,19 @@ export default function Input() {
         {onInput ? (
           <>
             <input
-              onClick={handleOnClick}
               autoFocus
               className={cx('input')}
               type="text"
               placeholder="Search"
               value={valueInput}
+              onFocus={handleOnFocus}
+              onBlur={handleOnBlur}
               onChange={(e) => {
                 const value = e.target.value;
                 return setValueInput(value);
               }}
             />
-            <span className={cx('icon-input')}>
+            <span className={cx('icon-input')} onClick={onClearText}>
               <MdCancel />
             </span>
           </>
@@ -100,7 +100,7 @@ export default function Input() {
               <BiSearch />
             </span>
             <p onClick={handleOnClick} className={cx('title')}>
-              Search
+              {save}
             </p>
           </>
         )}

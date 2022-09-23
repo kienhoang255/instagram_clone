@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Message from './components/Message/Message';
 import PersonalPage from './components/PersonalPage/PersonPage';
 import PersonPage from './components/PersonalPage/PersonPage';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 function App() {
   return (
     <div className="App">

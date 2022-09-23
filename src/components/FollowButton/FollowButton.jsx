@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import FollowButtonCss from '../../assets/css/Follow.css';
 import {
   Modal,
   ModalOverlay,
